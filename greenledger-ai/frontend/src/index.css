@@ -1,0 +1,283 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ── Enterprise Design System ────────────────────────────────────────────── */
+/* Tactile Brutalism: 1px borders, sharp geometry, 8pt grid, Inter, no glow  */
+
+:root {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  /* Typographic scale — all sizes in px, Tailwind rem values map to these */
+  --text-h1:    1.5rem;   /* 24px / Semi-Bold / tracking -0.02em */
+  --text-h2:    1rem;     /* 16px / Semi-Bold */
+  --text-body:  0.875rem; /* 14px / Regular / lh 1.6 */
+  --text-label: 0.75rem;  /* 12px / Semi-Bold / uppercase / tracking 0.05em */
+  --text-micro: 0.75rem;  /* 12px / Regular */
+}
+
+html,
+body {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0a0a0a;
+  color: #e4e4e7; /* zinc-200 */
+}
+
+/* ── Enterprise thin scrollbar ───────────────────────────────────────────── */
+::-webkit-scrollbar            { width: 4px; height: 4px; }
+::-webkit-scrollbar-track      { background: transparent; }
+::-webkit-scrollbar-thumb      { background: rgba(255,255,255,0.10); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover{ background: rgba(255,255,255,0.20); }
+* { scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.10) transparent; }
+
+/* ── Enterprise card — the canonical surface in audit views ──────────────── */
+/* Use .gl-card instead of .glass-card in all new dashboard components.      */
+.gl-card {
+  background-color: #1e293b;   /* slate-800 */
+  border: 1px solid #334155;   /* slate-700 */
+  border-radius: 4px;
+  transition: border-color 200ms ease-in-out;
+}
+.gl-card:hover {
+  border-color: #475569;       /* slate-600 on hover — no glow */
+}
+
+/* ── Overline / table-header utility ────────────────────────────────────── */
+.gl-overline {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #94a3b8; /* slate-400 */
+}
+
+/* ── Focus ring (accessible, brand-consistent) ───────────────────────────── */
+.gl-focus:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #0f172a, 0 0 0 4px #059669; /* emerald-600 ring */
+}
+
+/* ── Purple / Violet Design System (Xtract-inspired) ────────────────────── */
+/*   Primary            : #814ac8  (purple)                                   */
+/*   Accent             : #df7afe  (light violet)                             */
+/*   Gradient           : #814ac8 → #df7afe                                   */
+/*   Card bg            : #0d0d0d                                              */
+/*   Border             : rgba(255,255,255,0.05)                              */
+/*   Neon glow          : rgba(129,74,200,0.35)                               */
+
+/* ── Shiny Dark Green Design System (kept for non-home pages) ───────────── */
+/*   Primary accent     : emerald-400  #34d399                               */
+/*   Shiny gradient     : emerald-500 → green-600  #10b981 → #16a34a         */
+
+/* ── Enterprise card surfaces ────────────────────────────────────────────── */
+/* .glass-card and .glass-panel are used throughout the app. Redefining them  */
+/* here — no neon glow, no backdrop blur, just clean 1px borders.             */
+.glass-card {
+  background: #111111;
+  border: 1px solid rgba(255,255,255,0.07);
+  transition: border-color 150ms ease;
+}
+.glass-card:hover {
+  border-color: rgba(255,255,255,0.12);
+}
+
+.glass-panel {
+  background: #111111;
+  border: 1px solid rgba(255,255,255,0.07);
+}
+
+/* ── Primary accent gradient (muted, professional) ───────────────────────── */
+.ai-gradient-bg {
+  background: #059669; /* emerald-600 solid — no neon rainbow */
+}
+.hero-glow-bg {
+  background: radial-gradient(ellipse at 50% 0%, rgba(16,185,129,0.14) 0%, transparent 72%);
+}
+
+/* ── Neon glow utilities ──────────────────────────────────────────────────*/
+.green-glow      { box-shadow: 0 0 20px rgba(16,185,129,0.30), 0 0 40px rgba(16,185,129,0.12); }
+.neon-glow-sm    { box-shadow: 0 0 12px rgba(16,185,129,0.35); }
+.neon-glow-md    { box-shadow: 0 0 24px rgba(16,185,129,0.40); }
+.neon-glow-lg    { box-shadow: 0 0 48px rgba(16,185,129,0.35), 0 0 80px rgba(16,185,129,0.18); }
+
+/* ── Ambient orbs ─────────────────────────────────────────────────────────*/
+.green-orb {
+  background: radial-gradient(circle at center, rgba(16,185,129,0.18) 0%, rgba(0,0,0,0) 70%);
+  filter: blur(80px);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.purple-orb {
+  /* backward-compat alias — renders as subtle green */
+  background: radial-gradient(circle at center, rgba(16,185,129,0.12) 0%, rgba(0,0,0,0) 70%);
+  filter: blur(80px);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* ── Border-glow on hover ─────────────────────────────────────────────────*/
+.glowing-border-hover:hover {
+  border-color: rgba(16,185,129,0.28) !important;
+  box-shadow:
+    0 0 0 1px rgba(16,185,129,0.10),
+    inset 0 0 20px rgba(16,185,129,0.04),
+    0 8px 32px rgba(0,0,0,0.40);
+}
+
+/* ── Card shine sweep (mouse-over sweep effect) ───────────────────────────*/
+.card-shine { position: relative; overflow: hidden; }
+.card-shine::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.035) 50%, transparent 70%);
+  transform: translateX(-120%);
+  pointer-events: none;
+}
+.card-shine:hover::after {
+  animation: shine-sweep 0.65s ease-out forwards;
+}
+@keyframes shine-sweep {
+  from { transform: translateX(-120%); }
+  to   { transform: translateX(130%); }
+}
+
+/* ── Ticker / marquee ─────────────────────────────────────────────────────*/
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 34s linear infinite;
+}
+
+/* ── Dot-grid background ──────────────────────────────────────────────────*/
+.star-bg {
+  background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.035) 1px, transparent 0);
+  background-size: 32px 32px;
+}
+
+/* ── Shimmer skeleton row ─────────────────────────────────────────────────*/
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+.shimmer-row {
+  background: linear-gradient(90deg, transparent 25%, rgba(16,185,129,0.05) 50%, transparent 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2.2s infinite;
+}
+
+/* ── Float ────────────────────────────────────────────────────────────────*/
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-7px); }
+}
+.float-anim { animation: float 5s ease-in-out infinite; }
+
+/* ── Pulse ring ───────────────────────────────────────────────────────────*/
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0   rgba(16,185,129,0.35); }
+  70%  { box-shadow: 0 0 0 14px rgba(16,185,129,0);   }
+  100% { box-shadow: 0 0 0 0   rgba(16,185,129,0);    }
+}
+.pulse-ring { animation: pulse-ring 2.2s ease-out infinite; }
+
+/* ── GSAP: initial hidden states are set exclusively via gsap.set() ────────
+   Using CSS opacity:0 here causes FOUC because the browser can paint the
+   element at opacity:1 before the JS runs. gsap.set() fires inside
+   useLayoutEffect (before first paint) — no CSS needed. */
+.gsap-fade-up { /* intentionally empty — handled by gsap.set() in useGSAP */ }
+
+/* ── Purple Orb ───────────────────────────────────────────────────────────*/
+.purple-glow-orb {
+  background: radial-gradient(circle at center, rgba(129,74,200,0.22) 0%, rgba(0,0,0,0) 70%);
+  filter: blur(90px);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.purple-glow-orb-sm {
+  background: radial-gradient(circle at center, rgba(223,122,254,0.18) 0%, rgba(0,0,0,0) 70%);
+  filter: blur(60px);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* ── Purple glow utilities ────────────────────────────────────────────────*/
+.purple-neon-glow { box-shadow: 0 0 32px rgba(129,74,200,0.45), 0 0 60px rgba(129,74,200,0.20); }
+.purple-neon-glow-sm { box-shadow: 0 0 16px rgba(129,74,200,0.35); }
+.violet-neon-glow { box-shadow: 0 0 24px rgba(223,122,254,0.35); }
+
+/* ── Purple glass card ────────────────────────────────────────────────────*/
+.purple-glass-card {
+  background: rgba(13,13,13,0.85);
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(20px);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.04),
+    0 24px 48px rgba(0,0,0,0.55);
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.purple-glass-card:hover {
+  border-color: rgba(129,74,200,0.30);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.06),
+    0 0 0 1px rgba(129,74,200,0.10),
+    0 0 40px rgba(129,74,200,0.10),
+    0 24px 48px rgba(0,0,0,0.65);
+}
+
+/* ── Purple gradient border ───────────────────────────────────────────────*/
+.purple-border-glow:hover {
+  border-color: rgba(129,74,200,0.35) !important;
+  box-shadow:
+    0 0 0 1px rgba(129,74,200,0.12),
+    inset 0 0 20px rgba(129,74,200,0.05),
+    0 8px 32px rgba(0,0,0,0.40);
+}
+
+/* ── Verified badge pulse ─────────────────────────────────────────────────*/
+@keyframes verified-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(129,74,200,0.40); }
+  50%       { box-shadow: 0 0 0 8px rgba(129,74,200,0.0); }
+}
+.verified-pulse { animation: verified-pulse 2.5s ease-in-out infinite; }
+
+/* ── Gradient text utility ────────────────────────────────────────────────*/
+.gradient-text-purple {
+  background: linear-gradient(90deg, #814ac8, #df7afe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Framer-style hero grid pattern ───────────────────────────────────────*/
+.hero-grid-pattern {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ── Xtract-style ticker (purple) ─────────────────────────────────────────*/
+.purple-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 38s linear infinite;
+}
+
+/* ── Smooth appear animation ──────────────────────────────────────────────*/
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
+.fade-in-up-delay-1 { animation: fadeInUp 0.6s ease-out 0.1s forwards; opacity: 0; }
+.fade-in-up-delay-2 { animation: fadeInUp 0.6s ease-out 0.2s forwards; opacity: 0; }
+.fade-in-up-delay-3 { animation: fadeInUp 0.6s ease-out 0.3s forwards; opacity: 0; }
+.fade-in-up-delay-4 { animation: fadeInUp 0.6s ease-out 0.4s forwards; opacity: 0; }

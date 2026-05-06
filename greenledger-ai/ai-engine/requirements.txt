@@ -1,0 +1,9 @@
+fastapi==0.136.1
+uvicorn==0.46.0
+boto3==1.43.1
+python-dotenv==1.2.2
+httpx==0.28.1
+pdf2image==1.17.0
+Pillow==12.2.0
+python-multipart==0.0.27
+PyMuPDF>=1.23.0

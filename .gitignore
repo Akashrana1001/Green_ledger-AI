@@ -1,0 +1,51 @@
+# ─── Secrets — NEVER commit these ────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.crt
+
+# ─── Node / npm ──────────────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+.npm/
+.pnpm-store/
+
+# ─── Python ──────────────────────────────────────────────────────────────
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# ─── Build outputs ───────────────────────────────────────────────────────
+dist/
+build/
+*.tsbuildinfo
+
+# ─── PM2 logs ────────────────────────────────────────────────────────────
+.pm2/
+logs/
+*.log
+
+# ─── OS / editor ─────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ─── Project-specific ────────────────────────────────────────────────────
+greenledger-ai/backend/uploads/
+graphify-out/
+memory/
+
+# ─── Local-only Claude Code state ────────────────────────────────────────
+.claude/projects/
