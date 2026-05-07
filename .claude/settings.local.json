@@ -75,7 +75,28 @@
       "Bash(py -3 -m pip install \"PyMuPDF>=1.23.0\")",
       "Bash(grep -n \"uvicorn\\\\|host\\\\|port\" D:\\\\\\\\GreenLedger-Main\\\\\\\\greenledger-ai\\\\\\\\ai-engine\\\\\\\\main.py)",
       "Bash(git add *)",
-      "Bash(grep -E \"\\\\.env$|\\\\.pem$\")"
+      "Bash(grep -E \"\\\\.env$|\\\\.pem$\")",
+      "Bash(git commit -m 'Initial commit — GreenLedger AI *)",
+      "Bash(git branch *)",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "PowerShell(icacls D:\\\\GreenLedger-Main\\\\greenledger-key.pem /inheritance:r /grant:r \"$\\($env:USERNAME\\):\\(R\\)\" 2>&1)",
+      "Bash(ssh *)",
+      "Bash(scp -i D:/GreenLedger-Main/greenledger-key.pem -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o LogLevel=ERROR D:/GreenLedger-Main/greenledger-ai/deploy/ec2-bootstrap.sh ubuntu@34.239.183.29:/home/ubuntu/)",
+      "Bash(tar -czf /tmp/gl-upload.tar.gz --exclude=\"node_modules\" --exclude=\"venv\" --exclude=\".env\" --exclude=\"dist\" --exclude=\".git\" --exclude=\"uploads\" --exclude=\"__pycache__\" --exclude=\"*.pyc\" --exclude=\".pm2\" --exclude=\"logs\" --exclude=\"*.log\" --exclude=\".claude\" --exclude=\"memory\" --exclude=\"graphify-out\" --exclude=\"*.pem\" greenledger-ai)",
+      "Read(//tmp/**)",
+      "Bash(scp -i D:/GreenLedger-Main/greenledger-key.pem -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o LogLevel=ERROR /tmp/gl-upload.tar.gz ubuntu@34.239.183.29:/tmp/)",
+      "Bash(rm /tmp/gl-upload.tar.gz)",
+      "Bash(rm -rf dist)",
+      "Bash(VITE_API_BASE_URL=http://34.239.183.29:5000 npm run build)",
+      "PowerShell(Add-Type -AssemblyName System.IO.Compression.FileSystem; $zip = [System.IO.Compression.ZipFile]::OpenRead\\(\"D:\\\\GreenLedger-Main\\\\greenledger-frontend.zip\"\\); $zip.Entries | Select-Object FullName, @{N=\"SizeKB\";E={[math]::Round\\($_.Length/1024,1\\)}} | Format-Table -AutoSize; $zip.Dispose\\(\\))",
+      "Bash(export AWS_ACCESS_KEY_ID=\"ASIAZGGE22I54PCCPBZV\")",
+      "Bash(export AWS_SECRET_ACCESS_KEY=\"U79iwBjFbD7TmO4RVZfn2SdkVetnG6sj9w69CDrC\")",
+      "Bash(export AWS_SESSION_TOKEN=\"IQoJb3JpZ2luX2VjENz//////////wEaCXVzLWVhc3QtMSJHMEUCIQD7XNQ7J7O/4sRzPXthccDE/EmiWEBdebdTnZksFKgDxwIgD0DEn67p+XAYY2qa+7MwUDG/JnZx9pT2sNrRS/Wv014qogIIpf//////////ARABGgw2MzE3NzI5OTIwNTkiDJ3ti7tlBao1b4HV+Sr2AU7/sIqT5MthwGWEyABiSNoragF+CcP+l8Hm4jm0q+UJ9MoLc4Cw05eedNWjzNFo49jWgzO48LH8VPpG7ZWwRma1Bgs5oEMfqlt9JNDMrtQ8wFLB4PcmDg7zGlkuAmfZ45OUAUMSBs4+6XwAdtIaJn0ZbWcM2LuEiqCFxCgXHhHlVIccDDElawqrdzr/Q2A6JFI6sfzAD72rx2gjRy2mshozCflEp5KFJco49nGbYdug6G19pJNgnvw75LnXZ9v6koix+ApugBRD+ZB9bB9sjYR/xWeKBvuB3mRP4hDH/qAiFXTicSpnsczr9H/bhUAnszHdrbnmRTDzse7PBjqdAb6df6pC5UcGm2H3Rd85MypDQPphUcTbinYQTA9+3PftZbpi3HD5ENvBrINiR7nYq4+T6i193peBNTDRi+jFFBZ48XImiXxTKfLV93gDbt5KQ/Z4pEb6i6SwRFcLYu2nCGE4zVbvJvjb7qWEg0Imr0E/FQUzVNNtXdhs/EZeisgWyjs2tCR6Cc2f5qXhqfAJ1kmfKqyBhLWdFk6z1kU=\")",
+      "Bash(openssl s_client -servername 34-239-183-29.nip.io -connect 34-239-183-29.nip.io:443)",
+      "Bash(openssl x509 *)",
+      "Bash(VITE_API_BASE_URL=https://34-239-183-29.nip.io npm run build)",
+      "Bash(rm -f /d/GreenLedger-Main/greenledger-frontend.zip)"
     ]
   }
 }
