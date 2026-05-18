@@ -4,7 +4,6 @@
 
 Top 10 Finalist at Cognizant Technoverse 2026 among 5,600+ teams across India.
 
-> 🎥 **[Watch 60-sec Demo →](#)** ← add your Loom link here
 
 ---
 
