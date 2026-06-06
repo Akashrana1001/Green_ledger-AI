@@ -2,21 +2,6 @@
 
 **Upload a scanned electricity bill. Get an audit-ready SEBI BRSR Core report.** GreenLedger AI ingests unstructured corporate documents (PDFs, scanned images, Excel dumps), extracts ESG metrics with AWS Bedrock + a FAISS RAG layer, and computes all 46+ BRSR Core KPIs in deterministic Python — built for India's top-1,000 SEBI-listed companies who today pay Big-4 consultants ₹40–80L/year to do this by hand.
 
-[![Live Demo](https://img.shields.io/badge/demo-live-10b981?style=flat-square)](https://main.dq8example.amplifyapp.com) [![Stack](https://img.shields.io/badge/stack-React%20·%20Node%20·%20FastAPI%20·%20Bedrock-2563eb?style=flat-square)](#tech-stack) [![License](https://img.shields.io/badge/license-Proprietary-64748b?style=flat-square)](#license)
-
-> Set the demo badge URL to your Amplify domain before sharing.
-
----
-
-## Screenshots
-
-| Admin Dashboard | AI War Room (live processing) |
-|---|---|
-| ![Dashboard](greenledger-ai/frontend/src/assets/hero.png) | _Drop `docs/warroom.gif` here_ |
-
-> Add a 10-second GIF of a document going `pending → processing → verified` with KPI cards populating. That single GIF sells the whole product.
-
----
 
 ## Architecture
 
