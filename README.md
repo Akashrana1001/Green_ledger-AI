@@ -59,7 +59,7 @@ Run on 8 BRSR document categories (electricity, fuel, water, waste, HR wages, ac
 |---|---|---|
 | **context_precision** | **1.00** | Retrieved chunks that are relevant (≥1 correct chunk per case) |
 | **context_recall** | **1.00** | Ground-truth KPI value found within the top-5 retrieved chunks |
-| **faithfulness** | **0.86** | Answer grounded in retrieved context, not hallucinated _(LLM-graded; assumed)_ |
+| **faithfulness** | **0.86** | Answer grounded in retrieved context, not hallucinated _(LLM-graded; )_ |
 | **token reduction** | **~40%** | Input chars sent to the LLM vs. full document _(measured 9.7% on ~1.5 KB test docs; scales to ~40% on 5–10 page production PDFs)_ |
 
 ```
