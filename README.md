@@ -94,7 +94,7 @@ $ python ragas_eval.py
 ## Local Setup
 
 ```bash
-git clone <repo-url> && cd GreenLedger-Main/greenledger-ai
+git clone https://github.com/Akashrana1001/Green_ledger-AI && cd GreenLedger-Main/greenledger-ai
 
 # Backend  (terminal 1)
 cd backend && npm install && cp .env.example .env && npm run dev
