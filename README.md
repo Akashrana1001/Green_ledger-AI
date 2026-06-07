@@ -5,15 +5,6 @@
 
 ---
 
-## Screenshots
-
-| Admin Dashboard | AI War Room (live processing) |
-|---|---|
-| ![Dashboard](greenledger-ai/frontend/src/assets/hero.png) | _Drop `docs/warroom.gif` here_ |
-
-> Add a 10-second GIF of a document going `pending → processing → verified` with KPI cards populating. That single GIF sells the whole product.
-
----
 
 ## Architecture
 
