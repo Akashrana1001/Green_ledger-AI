@@ -1,7 +1,19 @@
 # GreenLedger AI
-
+9
 **Upload a scanned electricity bill. Get an audit-ready SEBI BRSR Core report.** GreenLedger AI ingests unstructured corporate documents (PDFs, scanned images, Excel dumps), extracts ESG metrics with AWS Bedrock + a FAISS RAG layer, and computes all 46+ BRSR Core KPIs in deterministic Python — built for India's top-1,000 SEBI-listed companies who today pay Big-4 consultants ₹40–80L/year to do this by hand.
 
+
+---
+
+## Screenshots
+
+| Admin Dashboard | AI War Room (live processing) |
+|---|---|
+| ![Dashboard](greenledger-ai/frontend/src/assets/hero.png) | _Drop `docs/warroom.gif` here_ |
+
+> Add a 10-second GIF of a document going `pending → processing → verified` with KPI cards populating. That single GIF sells the whole product.
+
+---
 
 ## Architecture
 
@@ -59,7 +71,7 @@ Run on 8 BRSR document categories (electricity, fuel, water, waste, HR wages, ac
 |---|---|---|
 | **context_precision** | **1.00** | Retrieved chunks that are relevant (≥1 correct chunk per case) |
 | **context_recall** | **1.00** | Ground-truth KPI value found within the top-5 retrieved chunks |
-| **faithfulness** | **0.86** | Answer grounded in retrieved context, not hallucinated _(LLM-graded; )_ |
+| **faithfulness** | **0.86** | Answer grounded in retrieved context, not hallucinated _(LLM-graded; assumed)_ |
 | **token reduction** | **~40%** | Input chars sent to the LLM vs. full document _(measured 9.7% on ~1.5 KB test docs; scales to ~40% on 5–10 page production PDFs)_ |
 
 ```
